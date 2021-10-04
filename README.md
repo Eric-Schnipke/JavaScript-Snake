@@ -6,7 +6,7 @@ This is a DOM-based game of Snake that I wrote in JavaScript over a decade ago. 
 
 You can now play and edit the game live in codesandbox:
 
-https://codesandbox.io/s/github/patorjk/JavaScript-Snake?file=/index.html
+https://codesandbox.io/s/github/eric-schnipke/JavaScript-Snake?file=/index.html
 
 On first load sometimes the game frame will not load correctly and you'll need to press the refresh icon above its display panel to get the game to show. 
 

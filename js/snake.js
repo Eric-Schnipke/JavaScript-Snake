@@ -334,11 +334,14 @@ SNAKE.Snake = SNAKE.Snake || (function() {
             newHead.elmStyle.top = newHead.yPos + "px";
 
             // check the new spot the snake moved into
-
+	    
+	    if (newHead.row === 5 && newHead.col === 5){
+	    	me.handleDeath();				// [2] Death Tile
+	    }
             if (grid[newHead.row][newHead.col] === 0) {
                 grid[newHead.row][newHead.col] = 1;
                 setTimeout(function(){me.go();}, snakeSpeed);
-            } else if (grid[newHead.row][newHead.col] > 0 || (newHead.row === 5 && newHead.col === 5) ) {
+            } else if (grid[newHead.row][newHead.col] > 0) {
                 me.handleDeath();
             } else if (grid[newHead.row][newHead.col] === playingBoard.getGridFoodValue()) {
                 grid[newHead.row][newHead.col] = 1;

@@ -335,7 +335,7 @@ SNAKE.Snake = SNAKE.Snake || (function() {
 
             // check the new spot the snake moved into
 	    
-	    if (newHead.row === 5 && newHead.col === 5){
+	    if (newHead.row === 10 && newHead.col === 10){
 	    	me.handleDeath();				// [2] Death Tile
 	    }
             else if (grid[newHead.row][newHead.col] === 0) {

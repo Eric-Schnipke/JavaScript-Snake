@@ -338,7 +338,7 @@ SNAKE.Snake = SNAKE.Snake || (function() {
             if (grid[newHead.row][newHead.col] === 0) {
                 grid[newHead.row][newHead.col] = 1;
                 setTimeout(function(){me.go();}, snakeSpeed);
-            } else if (grid[newHead.row][newHead.col] > 0) {
+            } else if (grid[newHead.row][newHead.col] > 0 || (newHead.row === 5 && newHead.col === 5) ) {
                 me.handleDeath();
             } else if (grid[newHead.row][newHead.col] === playingBoard.getGridFoodValue()) {
                 grid[newHead.row][newHead.col] = 1;

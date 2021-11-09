@@ -1,7 +1,7 @@
 /*
 JavaScript Snake
 First version by Patrick Gillespie - I've since merged in a good number of github pull requests
-http://patorjk.com/games/snake 
+http://patorjk.com/games/snake
 */
 
 /**
@@ -139,7 +139,7 @@ SNAKE.Snake = SNAKE.Snake || (function() {
                 modeDropdown.addEventListener('change', function(evt) {
                     evt = evt || {};
                     var val = evt.target ? parseInt(evt.target.value) : 75;
-                    
+
                     if (isNaN(val)) {
                         val = 75;
                     } else if (val < 25) {
@@ -334,7 +334,7 @@ SNAKE.Snake = SNAKE.Snake || (function() {
             newHead.elmStyle.top = newHead.yPos + "px";
 
             // check the new spot the snake moved into
-	    
+
 	    if ((newHead.row > 15 && newHead.row < 20) && (newHead.col > 15 && newHead.col < 20)){
 	    	me.handleDeath();				// [2] Death Tile
 	    }
@@ -406,7 +406,7 @@ SNAKE.Snake = SNAKE.Snake || (function() {
             //Reset speed
             var selectedSpeed = document.getElementById("selectMode").value;
             snakeSpeed = parseInt(selectedSpeed);
-            
+
             handleEndCondition(playingBoard.handleDeath);
         };
 
@@ -567,7 +567,7 @@ SNAKE.Food = SNAKE.Food || (function() {
                 // instead of freezing, exit out (and return false to indicate
                 // that the player beat the game)
                 numTries++;
-                if (numTries > 20000){
+                if (numTries > 20000){                             // [3] Easy Win
                     return false;
                 }
             }
@@ -929,7 +929,7 @@ SNAKE.Board = SNAKE.Board || (function() {
                 cLeft = 0;
                 cWidth = getClientWidth()-20;
                 cHeight = getClientHeight()-20;
-                
+
             } else {
                 cTop = config.top;
                 cLeft = config.left;
@@ -1094,4 +1094,4 @@ SNAKE.Board = SNAKE.Board || (function() {
         }
 
     }; // end return function
-})();  
+})();
